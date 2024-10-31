@@ -15,6 +15,14 @@ Live2D 看板娘插件 (https://www.fghrsh.net/post/123.html) 上使用的后端
 - PHP 版本 >= 5.2
 - 依赖 PHP 扩展：json
 
+### 安装命令
+
+```shell
+docker run -d --name live2d-api -p 5229:80 -v $(pwd):/var/www/html php:8.0-apache \
+  bash -c "a2enmod headers && echo 'Header set Access-Control-Allow-Origin \"*\"' >> /etc/apache2/apache2.conf && echo 'Header set Access-Control-Allow-Methods \"GET, POST, OPTIONS\"' >> /etc/apache2/apache2.conf && echo 'Header set Access-Control-Allow-Headers \"Content-Type, Authorization\"' >> /etc/apache2/apache2.conf && apache2-foreground"
+```
+
+
 ### 目录结构
 
 ```shell
